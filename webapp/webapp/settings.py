@@ -80,8 +80,8 @@ DATABASES = {
         'NAME': 'insurance',
         'HOST': 'localhost',
         'USER' : 'postgres',
-        'PASSWORD' : 'git123',
-        'PORT': 5432,
+        'PASSWORD' : 'Tanzeem@12345',
+        'PORT': '5432',
     }
 }
 
