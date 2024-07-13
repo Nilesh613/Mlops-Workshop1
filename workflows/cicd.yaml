@@ -6,12 +6,12 @@ on:
     pull_request:
         branches: ["main"]
 
-permissions:
-    contents: read
+#permissions:
+ #   contents: read
 
 jobs:
     build:
-        runs-on: unbuntu-latest
+        runs-on: ubuntu-latest
 
         steps:
             - uses: actions/checkout@v3
@@ -26,3 +26,11 @@ jobs:
                 pip install flake8 pytest
                 if [ -f requirements.txt ]; then pip intsall -r requirements.txt; fi
                 
+
+
+                name: Docker Build and Push
+                run:
+                  docker build -t medical
+                  docker tag medical nilesh613/medical:latest
+                  docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p {{ secrets.DOCKERHUB_TOKEN }}
+                  docker 
